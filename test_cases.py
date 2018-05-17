@@ -36,6 +36,13 @@ class seguridadTestCase(unittest.TestCase):
         valid = self.seguridad.registrarUsuario("angel@gmail.com", "probandoPass", "probandoPass")
         self.assertEqual(valid, False)
 
+    #(12) Verifica que se agrega el usuario al diccionario.
+    def test_AddUser(self):
+        diccionario = len(self.seguridad.users)
+        valid = self.seguridad.registrarUsuario("angel@gmail.com", "X7SJus62h7AHv", "X7SJus62h7AHv")
+        diccionarioAdd = len(self.seguridad.users)
+        self.assertNotEqual(diccionario, diccionarioAdd)
+
 
  
 
