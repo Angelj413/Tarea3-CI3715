@@ -16,6 +16,11 @@ class seguridadTestCase(unittest.TestCase):
         valid = self.seguridad.registrarUsuario("angel@gmail.com", "X7SJus62h7AHv", "X7SJus62h7AHv")
         self.assertNotEqual(valid, None)
 
+    #(4) Verifica que la clave tenga longitud mayor que 7.
+    def test_PasswordMin(self):
+        valid = self.seguridad.registrarUsuario("angel?@gmail.com", "X7SJ", "X7SJ")
+        self.assertEqual(valid, False)
+
 
  
 
