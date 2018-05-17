@@ -31,6 +31,11 @@ class seguridadTestCase(unittest.TestCase):
         valid = self.seguridad.registrarUsuario("angel@gmail.com", "x781dd3pru3hv", "x781dd3pru3hv")
         self.assertEqual(valid, False)
 
+    #(10) Verifica que la clave tenga al menos un digito.
+    def test_PasswordDigit(self):
+        valid = self.seguridad.registrarUsuario("angel@gmail.com", "probandoPass", "probandoPass")
+        self.assertEqual(valid, False)
+
 
  
 
