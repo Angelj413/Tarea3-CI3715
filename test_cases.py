@@ -21,6 +21,11 @@ class seguridadTestCase(unittest.TestCase):
         valid = self.seguridad.registrarUsuario("angel?@gmail.com", "X7SJ", "X7SJ")
         self.assertEqual(valid, False)
 
+    #(6) Verifica que la clave no tenga caracteres no alfanumericos.
+    def test_PasswordAlphaNum(self):
+        valid = self.seguridad.registrarUsuario("angel?@gmail.com", "X7SJus62h7AHv?", "X7SJus62h7AHv?")
+        self.assertEqual(valid, False)
+
 
  
 
