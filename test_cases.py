@@ -26,6 +26,11 @@ class seguridadTestCase(unittest.TestCase):
         valid = self.seguridad.registrarUsuario("angel?@gmail.com", "X7SJus62h7AHv?", "X7SJus62h7AHv?")
         self.assertEqual(valid, False)
 
+    #(8) Verifica que la clave tenga al menos una mayuscula.
+    def test_PasswordKeyMax(self):
+        valid = self.seguridad.registrarUsuario("angel@gmail.com", "x781dd3pru3hv", "x781dd3pru3hv")
+        self.assertEqual(valid, False)
+
 
  
 
