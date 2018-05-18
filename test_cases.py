@@ -15,6 +15,11 @@ class seguridadTestCase(unittest.TestCase):
     def test_EmailValid(self):
         valid = self.seguridad.registrarUsuario("angel?@gmail.com", "X7SJus62h7AHv", "X7SJus62h7AHv")
         self.assertEqual(valid, False)
+        
+    #Verifica que la clave tenga longitud menor que 17.
+    def test_PasswordMax(self):
+        valid = self.seguridad.registrarUsuario("angel?@gmail.com", "X7SJus62h7AHvxxxx", "X7SJus62h7AHvxxxx")
+        self.assertEqual(valid, False)
  
 
 if __name__ == '__main__':
