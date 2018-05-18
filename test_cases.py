@@ -20,6 +20,11 @@ class seguridadTestCase(unittest.TestCase):
     def test_PasswordMax(self):
         valid = self.seguridad.registrarUsuario("angel?@gmail.com", "X7SJus62h7AHvxxxx", "X7SJus62h7AHvxxxx")
         self.assertEqual(valid, False)
+    
+    #Verifica que la clave tenga al menos tres letras.
+    def test_Password3(self):
+        valid = self.seguridad.registrarUsuario("angel?@gmail.com", "9999163121A66o", "9999163121A66o")
+        self.assertEqual(valid, False)
  
 
 if __name__ == '__main__':
