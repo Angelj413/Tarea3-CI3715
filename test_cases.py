@@ -30,6 +30,11 @@ class seguridadTestCase(unittest.TestCase):
     def test_PasswordKeyMin(self):
         valid = self.seguridad.registrarUsuario("angel@gmail.com", "X781DD3PRU3HV", "X781DD3PRU3HV")
         self.assertEqual(valid, False)
+    
+    #Verifica que las claves dadas como parametros sean iguales.
+    def test_SamePassword(self):
+        valid = self.seguridad.registrarUsuario("angel@gmail.com", "X7SJus62h7AHv", "X7SJus62h7AHf")
+        self.assertEqual(valid, False)
  
 
 if __name__ == '__main__':
